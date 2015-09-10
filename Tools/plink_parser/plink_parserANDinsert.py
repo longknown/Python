@@ -10,6 +10,7 @@ sys.setdefaultencoding('utf-8')
 
 INSERT_ROW_NUMBER = 800  # A global define of the inserting row number;
 
+
 def plink_parse(mapfile, pedfile):
     snp_array = []  # to store SNPs
     with open(mapfile, 'r') as f:
@@ -31,10 +32,17 @@ def plink_parse(mapfile, pedfile):
                     snp_array[snp_order].snp_cul[cultivar] = bi_alleles
     return snp_array
 
+
 fn = sys.argv[1]
 con = mdb.connect('localhost', 'root', 'piao2551', '3K_SNP')
 with con:
+    # First obtain all the SNP ids from the database
     cur = con.cursor()
+    cur.execute('SELECT id FROM SNP')
+    snps = []
+    for i in cur.fetchall():
+        snps.append(i[0])
+
     cur.execute('SET AUTOCOMMIT = 0;')
     with open(fn, 'r') as f:
         for line in f:
@@ -47,6 +55,11 @@ with con:
                           allele_1, freq_1, allele_2, freq_2, allele_3, freq_3, allele_4, freq_4) VALUES '
             command_seq = 'INSERT INTO SNP_cultivar VALUES '
             for index, snp in enumerate(snp_array):
+                if snp.id in snps:  # to avoid duplicate keys, so judge whether the SNP has been inserted before
+                    continue
+                else:
+                    snps.append(snp.id)
+
                 alleles = snp.alleles()
                 a_f = snp.allele_freq()
                 values = [snp.id, snp.chr_id, snp.position, len(snp.snp_cul)]
