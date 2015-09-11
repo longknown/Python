@@ -26,6 +26,7 @@ with open(infile, 'r') as f:
 
 out_result = ''
 for name in mir_snp:
+    mir_snp[name].sort()  # This steps help to ensure that the miRNA haplotype is in ascending order
     out_result += name+'\t'+str(len(mir_snp[name]))+'\t'+'\t'.join(mir_snp[name])+'\n'
 fw.write(out_result)
 fw.close()
