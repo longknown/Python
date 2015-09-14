@@ -12,7 +12,7 @@ sys.setdefaultencoding('utf-8')
 '''
 
 INSERT_ROW_NUMBER = 800  # A global define of the inserting row number;
-REF_GENOME_PATH = '/home/thomas/Academy/RiceGenome/all.chr.con'
+REF_GENOME_PATH = '/Users/Thomas/Academy/RiceGenome/msu7.0/BLAST_local_genome/all.chr.con'
 
 records = {}
 for record in SeqIO.parse(REF_GENOME_PATH, 'fasta'):
