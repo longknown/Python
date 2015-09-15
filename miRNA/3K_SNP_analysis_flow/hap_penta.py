@@ -4,6 +4,8 @@ import MySQLdb as mdb
 
 __author__ = 'thomas'
 THRESHOLD = 10  # global definition of the number of cultivars corresponding to each pattern
+CUTOFF_LENGTH = 3  # the cutoff length of haplotype pattern
+MIN_MUTATE = 2  # cutoff mutation number in a miRNA precursor
 '''Usage
     :param This scripts requires the miRNA haplotype as input
     :return the haplotype pattern, pentanary pattern and their cultivars
@@ -11,7 +13,9 @@ THRESHOLD = 10  # global definition of the number of cultivars corresponding to 
 
 
 def pattern_n(_bi_allele, _alleles):  # the minor allele of the _bi_allele would be remained and lower case be returned
-    if _bi_allele[0] == _bi_allele[1]:
+    if _bi_allele == '00':
+        return 'N'
+    elif _bi_allele[0] == _bi_allele[1]:
         return _bi_allele[0]
     else:
         if _alleles.index(_bi_allele[0]) < _alleles.index(_bi_allele[1]):
@@ -29,13 +33,14 @@ def pentanary(haplotype, _snp_info, _snp_list, _ref_alleles):
         _snp = _snp_list[ind]
         _alleles = _snp_info[_snp]
         _ref_allele = _ref_alleles[ind]
-        _alleles.remove(_ref_allele)
-        if temp_allele == _ref_allele:
-            penta += '0'
-        elif temp_allele == 'N':
+        if temp_allele == 'N':
             penta += '4'
         else:
-            penta += str(_alleles.index(temp_allele)+1)
+            cut_alleles = [i for i in _alleles if i is not _ref_allele]
+            if temp_allele == _ref_allele:
+                penta += '0'
+            else:
+                penta += str(cut_alleles.index(temp_allele)+1)
     return penta
 
 
@@ -66,6 +71,8 @@ with con:
 
             line = line.rstrip('\n')
             elements = line.split()
+            if len(elements) < CUTOFF_LENGTH+1:
+                continue
             job = elements[0]
             snp_list = elements[1:]
             snps = ['"%s"' % i for i in snp_list]
@@ -98,10 +105,29 @@ with con:
 
             # print out the results
             content = ''
+            patterns = []
+            flag = 0
             for pattern in pattern_cultivar:
                 penta_pattern = pentanary(pattern, snp_info, snp_list, ref_alleles)
-                if len(pattern_cultivar[pattern]) >= THRESHOLD:
-                    content += '%s\t%s\t%s\t%s\t%s\r' % \
-                               (job, pattern, penta_pattern, len(pattern_cultivar[pattern]), ','.join(pattern_cultivar[pattern]))
+
+                # determine whether there's enough point mutations
+                ref_flag = [i for i in penta_pattern if i is not '0']
+                flag_pattern = [i for i in ref_flag if i is not '4']
+                mutate_number = len(flag_pattern)
+                if len(ref_flag) == 0:
+                    patterns.append(pattern)
+                if mutate_number >= MIN_MUTATE and len(pattern_cultivar[pattern]) >= THRESHOLD:
+                    flag = 1
+                    patterns.append(pattern)
+            print job, pattern_cultivar.keys()
+
+            # avoid a miRNA whose only reserved pattern is ref pattern or heterozygote ref pattern
+            if len(patterns) < 2 or flag == 0:
+                continue
+
+            for pattern in patterns:
+                penta_pattern = pentanary(pattern, snp_info, snp_list, ref_alleles)
+                content += '%s\t%s\t%s\t%s\t%s\r' % \
+                           (job, pattern, penta_pattern, len(pattern_cultivar[pattern]), ','.join(pattern_cultivar[pattern]))
             fout.write(content)
 fout.close()
