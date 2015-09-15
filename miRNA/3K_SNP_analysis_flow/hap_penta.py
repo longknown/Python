@@ -1,11 +1,12 @@
 #!/usr/bin/python
-__author__ = 'thomas'
 import sys
 import MySQLdb as mdb
+
+__author__ = 'thomas'
 THRESHOLD = 10  # global definition of the number of cultivars corresponding to each pattern
 '''Usage
     :param This scripts requires the miRNA haplotype as input
-    :return the haplotype pattern and their cultivars
+    :return the haplotype pattern, pentanary pattern and their cultivars
 '''
 
 
@@ -17,6 +18,25 @@ def pattern_n(_bi_allele, _alleles):  # the minor allele of the _bi_allele would
             return _bi_allele[1].lower()
         else:
             return _bi_allele[0].lower()
+
+
+def pentanary(haplotype, _snp_info, _snp_list, _ref_alleles):
+    penta = ''
+    # Convert all the alleles in haplotype to upper-case
+    haplotype = haplotype.upper()
+
+    for ind, temp_allele in enumerate(haplotype):
+        _snp = _snp_list[ind]
+        _alleles = _snp_info[_snp]
+        _ref_allele = _ref_alleles[ind]
+        _alleles.remove(_ref_allele)
+        if temp_allele == _ref_allele:
+            penta += '0'
+        elif temp_allele == 'N':
+            penta += '4'
+        else:
+            penta += str(_alleles.index(temp_allele)+1)
+    return penta
 
 
 mh_file = sys.argv[1]
@@ -42,6 +62,7 @@ with con:
             seqs = []
             snp_info = {}  # key: miRNA, value: list of alleles in descending order by their freq
             pattern_cultivar = {}  # key: pattern, value: cultivars(list)
+            ref_alleles = []
 
             line = line.rstrip('\n')
             elements = line.split()
@@ -49,12 +70,13 @@ with con:
             snp_list = elements[1:]
             snps = ['"%s"' % i for i in snp_list]
             # Get the alleles of the SNP in descending order
-            sql1 = 'SELECT allele_1, allele_2, allele_3, allele_4 FROM SNP WHERE id IN (%s);' % ', '.join(snps)
+            sql1 = 'SELECT allele_1, allele_2, allele_3, allele_4, ref_allele FROM SNP WHERE id IN (%s);' % ', '.join(snps)
             cur.execute(sql1)
             for index, row in enumerate(cur.fetchall()):
                 snp_id = snp_list[index]
                 snp_info[snp_id] = []
-                for allele in row:
+                ref_alleles.append(row[-1])
+                for allele in row[:-1]:
                     if allele is not None:
                         snp_info[snp_id].append(allele)
 
@@ -77,7 +99,9 @@ with con:
             # print out the results
             content = ''
             for pattern in pattern_cultivar:
+                penta_pattern = pentanary(pattern, snp_info, snp_list, ref_alleles)
                 if len(pattern_cultivar[pattern]) >= THRESHOLD:
-                    content += '%s\t%s\t%s\t%s\r' % (job, pattern, len(pattern_cultivar[pattern]), ','.join(pattern_cultivar[pattern]))
+                    content += '%s\t%s\t%s\t%s\t%s\r' % \
+                               (job, pattern, penta_pattern, len(pattern_cultivar[pattern]), ','.join(pattern_cultivar[pattern]))
             fout.write(content)
 fout.close()
