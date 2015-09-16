@@ -1,14 +1,18 @@
 #!/usr/bin/python
 import sys
 import MySQLdb as mdb
+from mutate_rnaseq import mutate_seq
 
 __author__ = 'thomas'
 THRESHOLD = 10  # global definition of the number of cultivars corresponding to each pattern
 CUTOFF_LENGTH = 3  # the cutoff length of haplotype pattern
 MIN_MUTATE = 2  # cutoff mutation number in a miRNA precursor
-'''Usage
-    :param This scripts requires the miRNA haplotype as input
-    :return the haplotype pattern, pentanary pattern and their cultivars
+
+
+def _help():
+    print '''Usage
+    :param This scripts requires the miRNA haplotype as input, file format: miRNA, strand forward, RNA seq, start pos, end pos, SNP1, SNP2...
+    :return the haplotype pattern, pentanary pattern, RNA sequence, mutated RNA sequence, and their cultivars
 '''
 
 
@@ -44,12 +48,15 @@ def pentanary(haplotype, _snp_info, _snp_list, _ref_alleles):
     return penta
 
 
-mh_file = sys.argv[1]
 if len(sys.argv) == 2:
     fout = sys.stdout
 elif len(sys.argv) > 2:
     fw = sys.argv[2]
     fout = open(fw, 'a')
+else:
+    _help()
+    exit(1)
+mh_file = sys.argv[1]
 
 con = mdb.connect(host='localhost', user='root', passwd='piao2551', db='3K_SNP')
 cultivars = []
@@ -68,22 +75,28 @@ with con:
             snp_info = {}  # key: miRNA, value: list of alleles in descending order by their freq
             pattern_cultivar = {}  # key: pattern, value: cultivars(list)
             ref_alleles = []
+            pos_list = []
 
             line = line.rstrip('\n')
             elements = line.split()
             if len(elements) < CUTOFF_LENGTH+1:
                 continue
             job = elements[0]
-            snp_list = elements[1:]
+            strand_forward = elements[1]
+            rna_seq = elements[2]
+            start = int(elements[3])
+            end = int(elements[4])
+            snp_list = elements[5:]
             snps = ['"%s"' % i for i in snp_list]
             # Get the alleles of the SNP in descending order
-            sql1 = 'SELECT allele_1, allele_2, allele_3, allele_4, ref_allele FROM SNP WHERE id IN (%s);' % ', '.join(snps)
+            sql1 = 'SELECT allele_1, allele_2, allele_3, allele_4, ref_allele, position FROM SNP WHERE id IN (%s);' % ', '.join(snps)
             cur.execute(sql1)
             for index, row in enumerate(cur.fetchall()):
                 snp_id = snp_list[index]
                 snp_info[snp_id] = []
-                ref_alleles.append(row[-1])
-                for allele in row[:-1]:
+                ref_alleles.append(row[-2])
+                pos_list.append(row[-1])
+                for allele in row[:-2]:
                     if allele is not None:
                         snp_info[snp_id].append(allele)
 
@@ -119,7 +132,6 @@ with con:
                 if mutate_number >= MIN_MUTATE and len(pattern_cultivar[pattern]) >= THRESHOLD:
                     flag = 1
                     patterns.append(pattern)
-            print job, pattern_cultivar.keys()
 
             # avoid a miRNA whose only reserved pattern is ref pattern or heterozygote ref pattern
             if len(patterns) < 2 or flag == 0:
@@ -127,7 +139,9 @@ with con:
 
             for pattern in patterns:
                 penta_pattern = pentanary(pattern, snp_info, snp_list, ref_alleles)
-                content += '%s\t%s\t%s\t%s\t%s\r' % \
-                           (job, pattern, penta_pattern, len(pattern_cultivar[pattern]), ','.join(pattern_cultivar[pattern]))
+                alterd_seq = mutate_seq(rna_seq, strand_forward, start, end, pos_list, pattern)
+                content += '%s\t%s\t%s\t%s\t%s\t%s\t%s\r' % \
+                           (job, pattern, penta_pattern, len(pattern_cultivar[pattern]), rna_seq, alterd_seq,
+                            ','.join(pattern_cultivar[pattern]))
             fout.write(content)
 fout.close()
