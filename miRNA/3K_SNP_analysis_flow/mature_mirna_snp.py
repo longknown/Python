@@ -17,12 +17,12 @@ elif len(sys.argv) > 2:
 with con:
     cur = con.cursor()
     with open(infile, 'r') as f:
+        content = ''
         for line in f:
             snp_list = []
             pos_list = []
             alleles_list = []
             ref_allele_list = []
-            content = ''
             line = line.rstrip('\n')
             elements = line.split()
             job = elements[0]
@@ -38,30 +38,33 @@ with con:
             cur.execute(sql)
             for row in cur.fetchall():
                 snp_list.append(row[0])
-                pos_list.append(row[1])
+                pos_list.append(int(row[1]))
                 ref_allele_list.append(row[2])
                 alleles = ''
                 for allele in row[3:]:
                     if allele is not None:
                         alleles += allele
                 alleles_list.append(alleles)
+            if len(snp_list) == 0:
+                continue
 
             # print out the results
-            content += '%s, Number of SNPs:%s\r' % (job, len(snp_list))
+            content += '%s, Number of SNPs:%s\n' % (job, len(snp_list))
             for index, snp in enumerate(snp_list):
                 pos = pos_list[index]
                 alleles = alleles_list[index]
                 ref_allele = ref_allele_list[index]
                 relative_pos = rela_pos(strand_forward, start, end, pos)
-                content += '%s, Relative Position:%s\r' % (snp, relative_pos)
+                content += '%s, Relative Position:%s\n' % (snp, relative_pos+1)
                 for allele in alleles:
                     if allele == ref_allele:
                         continue
-                    content += 'Mutated allele: %s\r' % allele
+                    content += 'Mutated allele: %s\n' % allele
                     altered_seq = mutate_seq(mature_sequence, strand_forward, start, end, pos_list, allele)
                     match_line = ['|'] * len(mature_sequence)
                     match_line[relative_pos] = '*'
-                    content += '%s\r%s\r%s\r' % (mature_sequence, ''.join(match_line), altered_seq)
-            content += '\r'
+                    content += '%s\n%s\n%s\n' % (mature_sequence, ''.join(match_line), altered_seq)
+            content += '\n'
+            print content
 fout.write(content)
 fout.close()
