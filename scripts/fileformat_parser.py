@@ -62,8 +62,7 @@ def test():
     path = '/Users/Thomas/Downloads/snp3kvars-chrchr12-14900001-14950000.txt'
     snp_array = tab_parse(path, 'chr12')
     snp = snp_array[4]
-    print snp.id, snp.chr_id, snp.position, snp.ref_allele
-    print len(snp.snp_cul)
+    print snp.id, snp.snp_seq()
 
 
 if __name__ == '__main__':

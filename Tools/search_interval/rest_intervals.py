@@ -2,7 +2,8 @@
 __author__ = 'Thomas'
 
 import sys
-from Fuse_intervals import Interval, IntervalSet
+
+from Python.Tools.plink_parser.Fuse_intervals import Interval
 
 fl = sys.argv[1]
 chr_itv = {}
