@@ -28,7 +28,7 @@ class Interval:
         return self.end-self.start
 
     def __contains__(self, item):  # self covers the item interval
-        if item.start > self.start and item.end < self.end:
+        if item.start >= self.start and item.end <= self.end:
             return True
         else:
             return False
@@ -41,7 +41,7 @@ class IntervalSet:
     __name__ = 'IntervalSet'
 
     def __init__(self, other=None):  # other is another Interval type
-        if not other:
+        if other is None:
             self.items = []  # items is a list of class Interval
             self.number = 0
             self.lower = 0
@@ -135,7 +135,7 @@ def test():
     intervals = [a, b, c, f, g, h]
 
     test1 = Interval(120, 203)
-    test2 = Interval(59, 65)
+    test2 = Interval(55, 69)
     test3 = Interval(550, 600)
     test4 = Interval(-10, 0)
     test5 = Interval(80, 90)
@@ -146,12 +146,9 @@ def test():
     set1 = IntervalSet()
     for i in intervals:
         set1.insert(i)
-    set1.items.remove(a)
-    set1.print_intervalset()
-    print '*' * 50
-    for item in testset:
-        if item in set1:
-            item.print_interval()
+    for j in testset:
+        if j in set1:
+            j.print_interval()
 
 if __name__ == '__main__':
     test()

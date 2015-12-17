@@ -5,6 +5,7 @@ from Bio import SeqIO
 fastafile = sys.argv[1]
 coorfile = sys.argv[2]
 
+
 def fetch_seq(fastafile, seqname, start, end):
     for seq_record in SeqIO.parse(fastafile, 'fasta'):
         if seq_record.id == seqname:

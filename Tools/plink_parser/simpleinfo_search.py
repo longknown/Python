@@ -6,6 +6,7 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
+
 def search_snp(cur, chr_id, start, end):
     '''
     :param cur: The cursor of the database;
