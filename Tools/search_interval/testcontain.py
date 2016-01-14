@@ -4,7 +4,8 @@ __author__ = 'Thomas'
 import sys
 import os
 
-from Fuse_intervals import Interval, IntervalSet
+from Python.Tools.plink_parser.Fuse_intervals import Interval, IntervalSet
+
 
 
 

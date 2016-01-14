@@ -55,16 +55,16 @@ with con:
                 alleles = alleles_list[index]
                 ref_allele = ref_allele_list[index]
                 relative_pos = rela_pos(strand_forward, start, end, pos)
-                content += '%s, Relative Position:%s\n' % (snp, relative_pos+1)
+                content += '>%s, Relative Position:%s, Ref allele:%s\n' % (snp, relative_pos+1, ref_allele)
                 for allele in alleles:
                     if allele == ref_allele:
                         continue
-                    content += 'Mutated allele: %s\n' % allele
-                    altered_seq = mutate_seq(mature_sequence, strand_forward, start, end, pos_list, allele)
+                    content += '>>Mutated allele: %s\n' % allele
+                    altered_seq = mutate_seq(mature_sequence, strand_forward, start, end, [pos], allele)
                     match_line = ['|'] * len(mature_sequence)
                     match_line[relative_pos] = '*'
                     content += '%s\n%s\n%s\n' % (mature_sequence, ''.join(match_line), altered_seq)
             content += '\n'
-            print content
+            #print content
 fout.write(content)
 fout.close()

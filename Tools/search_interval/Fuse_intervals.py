@@ -28,7 +28,7 @@ class Interval:
         return self.end-self.start
 
     def __contains__(self, item):  # self covers the item interval
-        if item.start > self.start and item.end < self.end:
+        if item.start >= self.start and item.end <= self.end:
             return True
         else:
             return False

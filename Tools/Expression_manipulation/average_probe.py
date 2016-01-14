@@ -17,7 +17,7 @@ with open(exp_file, 'r') as f:
     for line in f:
         line = line.rstrip('\n')
         elements = line.split()
-        uniq_id = elements[0][:-2]
+        uniq_id = elements[0][:-8]
         exp_data = [float(x) for x in elements[1:]]
         if uniq_id not in id_exp:
             id_exp[uniq_id] = []
