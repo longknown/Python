@@ -1,6 +1,5 @@
 #!/usr/bin/python
-'''
-Module that depicts class complementarity pattern and complementarity alteration;
+'''Module that depicts class complementarity pattern and complementarity alteration;
 '''
 
 __author__ = 'Thomas'
@@ -12,7 +11,7 @@ class HandlingException(Exception):
     pass
 
 
-def mismatch(cpt):  # browse and return the mismatched position list
+def unpair(cpt):  # browse and return the unpaired position list
     pos_list = []
     for index, base in enumerate(cpt.miRNA_seq):
         target_base = cpt.target_seq[index]
@@ -64,4 +63,3 @@ class Complementarity:
         self.miRNA_seq = _mirna_seq
         self.target_name = _target_name
         self.target_seq = _target_seq
-
