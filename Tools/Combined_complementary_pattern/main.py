@@ -2,6 +2,7 @@
 import sys
 from complementaryMOD import *
 from HaplotypeMOD import *
+from hapattern import _grasp_pattern
 
 __author__ = 'Thomas'
 
@@ -59,8 +60,12 @@ with open(interactionFILE, 'r') as f3:
         temp_hap = Haplotype(mirna, gene, mirna_hap, gene_hap)
         hap_list.append(temp_hap)
 
+# print the combined haplotype to local file
+fw1 = open('haplotype', 'w')
+line = []
 for temp in hap_list:
-    print temp.mirna, temp.gene, temp.hap_mirna, temp.hap_gene
-print len(hap_list)
+    line.append('\t'.join(temp.mirna, temp.gene, temp.hap_mirna, temp.hap_gene))
+fw1.write('\n'.join(line))
+fw1.close()
 
-
+_grasp_pattern(hap_list)
