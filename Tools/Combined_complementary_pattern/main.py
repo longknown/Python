@@ -46,7 +46,7 @@ with open(interactionFILE, 'r') as f3:
         elements = line.split('::')
         mirna = elements[0]
         gene = elements[1]
-        if mirna not in mir_hap_dict and gene not in gene_hap_dict:  # what if no SNP in mature miRNA or in target genes?
+        if mirna not in mir_hap_dict and gene not in gene_hap_dict:
             continue
         if mirna not in mir_hap_dict:
             mirna_hap = []
