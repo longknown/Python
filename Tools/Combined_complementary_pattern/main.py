@@ -64,7 +64,9 @@ with open(interactionFILE, 'r') as f3:
 fw1 = open('haplotype', 'w')
 line = []
 for temp in hap_list:
-    line.append('\t'.join(temp.mirna, temp.gene, temp.hap_mirna, temp.hap_gene))
+    mirna_hap = ', '.join(temp.hap_mirna)
+    gene_hap = ', '.join(temp.hap_gene)
+    line.append('\t'.join([temp.mirna, temp.gene, mirna_hap, gene_hap]))
 fw1.write('\n'.join(line))
 fw1.close()
 
