@@ -14,4 +14,3 @@ class Haplotype:
         self.gene = _gene
         self.hap_mirna = _hap_mirna
         self.hap_gene = _hap_gene
-

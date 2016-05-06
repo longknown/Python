@@ -2,9 +2,11 @@
   <dictionary name="Thomas">
     <words>
       <w>cdna</w>
+      <w>complementarities</w>
       <w>exon</w>
       <w>indel</w>
       <w>pentanary</w>
+      <w>snps</w>
     </words>
   </dictionary>
 </component>
