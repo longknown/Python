@@ -47,7 +47,8 @@ with open(hap_file, 'r') as f2:
         ref_pattern_form = show_complementarity(ref_cpt)
         hap_pattern_form = show_complementarity(temp_cpt)
         comment = pattern_comparison(ref_cpt, temp_cpt)
-        if comment is not '':
+        # if comment is not '':
+        if 'LOC_Os06g39330' in target_name and 'osa-miR818d' in mirna_name and 'Pos5: Paired to Mismatch' in comment:
             output += concate_name + '\tRef_pattern: ' + ref_pattern + '\tHap_pattern: ' + hap_pattern + '\n' \
                 + 'Visualized Reference Pattern:\n' + ref_pattern_form + '\n' \
                 + 'Visualized Haplotype Pattern:\n' + hap_pattern_form + '\n' \

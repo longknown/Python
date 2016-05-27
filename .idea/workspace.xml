@@ -2,19 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="554b1b5e-b1a0-41d6-b53c-3f7f5ebb8269" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tools/Combined_complementary_pattern/Compare_complementarity_with_reference.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tools/Combined_complementary_pattern/Complementarity_Classification.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tools/Combined_complementary_pattern/Haplotype2complementarity.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tools/Combined_complementary_pattern/MismatchAtEachSite.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/temp_script/extract_duplicate.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Thomas.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Thomas.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/RemoveSplicingNotation.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/advanced_counting.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/counting_cultivar.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/gene2mirna.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tools/Combined_complementary_pattern/HaplotypeMOD.py" afterPath="$PROJECT_DIR$/Tools/Combined_complementary_pattern/HaplotypeMOD.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tools/Combined_complementary_pattern/complementaryMOD.py" afterPath="$PROJECT_DIR$/Tools/Combined_complementary_pattern/complementaryMOD.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tools/Combined_complementary_pattern/Compare_complementarity_with_reference.py" afterPath="$PROJECT_DIR$/Tools/Combined_complementary_pattern/Compare_complementarity_with_reference.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/Compare_complementarity_with_reference.py" afterPath="$PROJECT_DIR$/scripts/Compare_complementarity_with_reference.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/Fuse_intervals.py" afterPath="$PROJECT_DIR$/scripts/Fuse_intervals.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/HaplotypeMOD.py" afterPath="$PROJECT_DIR$/scripts/HaplotypeMOD.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/MSU2RAP.py" afterPath="$PROJECT_DIR$/scripts/MSU2RAP.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/Obtain_downloaded_regions.py" afterPath="$PROJECT_DIR$/scripts/Obtain_downloaded_regions.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/Obtain_geneSeq.py" afterPath="$PROJECT_DIR$/scripts/Obtain_geneSeq.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/Pearson_correlation.py" afterPath="$PROJECT_DIR$/scripts/Pearson_correlation.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/Relevant2ABSpos.py" afterPath="$PROJECT_DIR$/scripts/Relevant2ABSpos.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/Spearman.py" afterPath="$PROJECT_DIR$/scripts/Spearman.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/__init__.py" afterPath="$PROJECT_DIR$/scripts/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/average_probe.py" afterPath="$PROJECT_DIR$/scripts/average_probe.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/chosen_pairs.py" afterPath="$PROJECT_DIR$/scripts/chosen_pairs.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/compare.py" afterPath="$PROJECT_DIR$/scripts/compare.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/complementaryMOD.py" afterPath="$PROJECT_DIR$/scripts/complementaryMOD.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/confirm_probe.py" afterPath="$PROJECT_DIR$/scripts/confirm_probe.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/extractUniq.py" afterPath="$PROJECT_DIR$/scripts/extractUniq.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/extract_byID.py" afterPath="$PROJECT_DIR$/scripts/extract_byID.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/extract_geneExp.py" afterPath="$PROJECT_DIR$/scripts/extract_geneExp.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/extract_literal.py" afterPath="$PROJECT_DIR$/scripts/extract_literal.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/fileformat_parser.py" afterPath="$PROJECT_DIR$/scripts/fileformat_parser.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/get_seq.py" afterPath="$PROJECT_DIR$/scripts/get_seq.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/grep_locusinfo.py" afterPath="$PROJECT_DIR$/scripts/grep_locusinfo.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/hapattern.py" afterPath="$PROJECT_DIR$/scripts/hapattern.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/insert_cultivar.py" afterPath="$PROJECT_DIR$/scripts/insert_cultivar.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/main.py" afterPath="$PROJECT_DIR$/scripts/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/manipulate_csv_header.py" afterPath="$PROJECT_DIR$/scripts/manipulate_csv_header.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/map_exp.py" afterPath="$PROJECT_DIR$/scripts/map_exp.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/plink_parserANDinsert.py" afterPath="$PROJECT_DIR$/scripts/plink_parserANDinsert.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/query_coord.py" afterPath="$PROJECT_DIR$/scripts/query_coord.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/query_seq.py" afterPath="$PROJECT_DIR$/scripts/query_seq.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/snp.py" afterPath="$PROJECT_DIR$/scripts/snp.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/test_cover.py" afterPath="$PROJECT_DIR$/scripts/test_cover.py" />
     </list>
     <ignored path="Python.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,11 +72,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="complementaryMOD.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="complementaryMOD.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tools/Combined_complementary_pattern/complementaryMOD.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="91" column="31" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
+            <state relative-caret-position="1820">
+              <caret line="91" column="43" selection-start-line="91" selection-start-column="43" selection-end-line="91" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -68,13 +93,53 @@
         </entry>
       </file>
       <file leaf-file-name="Compare_complementarity_with_reference.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tools/Combined_complementary_pattern/Compare_complementarity_with_reference.py">
+        <entry file="file://$PROJECT_DIR$/scripts/Compare_complementarity_with_reference.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+            <state relative-caret-position="682">
+              <caret line="50" column="104" selection-start-line="50" selection-start-column="104" selection-end-line="50" selection-end-column="104" />
               <folding>
                 <element signature="e#18#28#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Haplotype2complementarity.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Tools/Combined_complementary_pattern/Haplotype2complementarity.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="560">
+              <caret line="67" column="28" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="counting_cultivar.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/counting_cultivar.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="advanced_counting.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/advanced_counting.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RemoveSplicingNotation.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/RemoveSplicingNotation.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="15" column="71" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -107,11 +172,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/miRNA/3K_SNP_analysis_flow/pentanary.py" />
-        <option value="$PROJECT_DIR$/miRNA/3K_SNP_analysis_flow/hap_penta.py" />
-        <option value="$PROJECT_DIR$/miRNA/3K_SNP_analysis_flow/mutate_rnaseq.py" />
-        <option value="$PROJECT_DIR$/miRNA/3K_SNP_analysis_flow/mature_mirna_snp.py" />
-        <option value="$PROJECT_DIR$/temp_script/manipulatefile.py" />
         <option value="$PROJECT_DIR$/temp_script/map_exp.py" />
         <option value="$PROJECT_DIR$/Tools/plink_parser/simpleinfo_search.py" />
         <option value="$PROJECT_DIR$/Tools/Target_processing/find_coord.py" />
@@ -158,6 +218,11 @@
         <option value="$PROJECT_DIR$/Tools/Combined_complementary_pattern/complementaryMOD.py" />
         <option value="$PROJECT_DIR$/temp_script/extract_duplicate.py" />
         <option value="$PROJECT_DIR$/Tools/Combined_complementary_pattern/Compare_complementarity_with_reference.py" />
+        <option value="$PROJECT_DIR$/scripts/counting_cutivar.py" />
+        <option value="$PROJECT_DIR$/scripts/RemoveSplicingNotation.py" />
+        <option value="$PROJECT_DIR$/scripts/gene2mirna.py" />
+        <option value="$PROJECT_DIR$/scripts/counting_cultivar.py" />
+        <option value="$PROJECT_DIR$/scripts/Compare_complementarity_with_reference.py" />
       </list>
     </option>
   </component>
@@ -260,7 +325,39 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Python" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Python" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Python" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Python" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Combined_complementary_pattern" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -280,8 +377,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -292,15 +389,15 @@
     <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/scripts" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$USER_HOME$/Desktop" />
       <recent name="$PROJECT_DIR$/scripts" />
+      <recent name="$USER_HOME$/Desktop" />
       <recent name="$PROJECT_DIR$/Tools/Expression_manipulation" />
       <recent name="$PROJECT_DIR$/Tools/Target_processing" />
       <recent name="$PROJECT_DIR$/Tools/plink_parser" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/scripts" />
     </key>
   </component>
   <component name="RunManager" selected="Python.extract">
@@ -567,16 +664,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17668097" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24821173" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959184" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2295673" sideWeight="0.50572246" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23012048" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16867469" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14302884" sideWeight="0.49427754" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25360578" sideWeight="0.49427754" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -630,41 +727,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tools/Target_processing/query_coord.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tools/fetch_seq.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tools/search_interval/Fuse_intervals.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tools/Target_processing/query_seq.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/temp_script/manipulatefile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -928,7 +990,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8160">
           <caret line="421" column="25" selection-start-line="421" selection-start-column="25" selection-end-line="421" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -936,16 +997,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tools/Combined_complementary_pattern/Haplotype2complementarity.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
-          <folding>
-            <element signature="e#18#28#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -963,6 +1014,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Tools/Combined_complementary_pattern/complementaryMOD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1820">
+          <caret line="91" column="43" selection-start-line="91" selection-start-column="43" selection-end-line="91" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tools/Combined_complementary_pattern/Compare_complementarity_with_reference.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="51" column="36" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Tools/Combined_complementary_pattern/hapattern.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2140">
@@ -974,13 +1040,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tools/Combined_complementary_pattern/Compare_complementarity_with_reference.py">
+    <entry file="file://$PROJECT_DIR$/scripts/RemoveSplicingNotation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
-          <folding>
-            <element signature="e#18#28#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="300">
+          <caret line="15" column="71" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -992,10 +1056,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tools/Combined_complementary_pattern/complementaryMOD.py">
+    <entry file="file://$PROJECT_DIR$/scripts/advanced_counting.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="91" column="31" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
+        <state relative-caret-position="200">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/gene2mirna.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/counting_cultivar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/Compare_complementarity_with_reference.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="50" column="104" selection-start-line="50" selection-start-column="104" selection-end-line="50" selection-end-column="104" />
+          <folding>
+            <element signature="e#18#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tools/Combined_complementary_pattern/Haplotype2complementarity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="67" column="28" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
           <folding />
         </state>
       </provider>

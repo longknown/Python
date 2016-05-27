@@ -47,7 +47,8 @@ with open(hap_file, 'r') as f2:
         ref_pattern_form = show_complementarity(ref_cpt)
         hap_pattern_form = show_complementarity(temp_cpt)
         comment = pattern_comparison(ref_cpt, temp_cpt)
-        if comment is not '':
+        # if comment is not '':
+        if 'Still Paired' in comment and 'osa-miR1442' in mirna_name:
             output += concate_name + '\tRef_pattern: ' + ref_pattern + '\tHap_pattern: ' + hap_pattern + '\n' \
                 + 'Visualized Reference Pattern:\n' + ref_pattern_form + '\n' \
                 + 'Visualized Haplotype Pattern:\n' + hap_pattern_form + '\n' \
